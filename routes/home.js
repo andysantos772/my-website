@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.sendFile('../pages/home');
+    res.sendFile(__dirname + '../pages/home');
 });
 
 module.exports = router;
