@@ -5,3 +5,5 @@ a.textContent = 'About Link Created by JS';
 a.setAttribute('href', "./about");
 
 container.appendChild(a);
+
+console.log('Success');
