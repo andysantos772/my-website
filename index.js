@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('config');
-const home = require('./routes/home');
+const nav = require('./routes/nav');
 const express = require('express');
 const app = express();
 
@@ -10,7 +10,7 @@ mongoose.connect(db)
     .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.use(express.json());
-app.use('/', home);
+app.use('/', nav);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
