@@ -1,10 +1,10 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
-const Character = mongoose.model('Character', new mongoose.Schema({
+const DndCharacter = mongoose.model('DndCharacter', new mongoose.Schema({
   name: { type: String },
   class: { type: String },
   race: { type: String }
-}), 'rpg/dnd');
+}), 'rpg');
 
-exports.Character = Character; 
+exports.DndCharacter = DndCharacter; 

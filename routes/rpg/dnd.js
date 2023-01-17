@@ -1,10 +1,10 @@
-const { Character } = require('../../models/dnd'); 
+const { DndCharacter } = require('../../models/dnd'); 
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  const chars = await Character.find();
+router.get('/dnd', async (req, res) => {
+  const chars = await DndCharacter.find();
   res.send(chars);
 });
 
