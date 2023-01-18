@@ -14,4 +14,8 @@ router.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages', 'about.html'));
 });
 
+router.get('/rpg', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'pages', 'rpg.html'));
+});
+
 module.exports = router;
