@@ -11,21 +11,36 @@
 </head>
 <body>
     <script src="../scripts/navbar.js"></script>
-    <div class="display-box">
-        <form action="/api/rpg/dnd" method="post" class="stats">
-            <label for="stat">STAT BLOCKS</label>
-            <input type="text" id="stat">
-        </form>
 
-        <form action="/api/rpg/dnd" method="post" class="bio">
-            <label for="bio">BIOGRAPHY</label>
-            <input type="text" id="bio">
-        </form>
+    <div id="page">
+    <div class="form-selectors">
+        <button type="button" id="stats">STATS</button>
+        <button type="button" id="bio">BIOGRAPHY</button>
+        <button type="button" id="spells">SPELLCASTING</button>
+    </div>
 
-        <form action="/api/rpg/dnd" method="post" class="spells">
-            <label for="spell">SPELLCASTING</label>
-            <input type="text" id="spell">
-        </form>
+    <div id="char-creator">
+        <div class="static-info">
+            <p>lorem ipsum lorem ipsum</p>
+        </div>
+
+        <div class="forms">
+            <form action="/api/rpg/dnd" method="post" class="stats show">
+                <label for="stat">STAT BLOCKS</label>
+                <input type="text" id="stat">
+            </form>
+
+            <form action="/api/rpg/dnd" method="post" class="bio">
+                <label for="bio">BIOGRAPHY</label>
+                <input type="text" id="bio">
+            </form>
+
+            <form action="/api/rpg/dnd" method="post" class="spells">
+                <label for="spell">SPELLCASTING</label>
+                <input type="text" id="spell">
+            </form>
+        </div>
+    </div>
     </div>
 </body>
 </html>
