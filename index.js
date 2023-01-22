@@ -14,6 +14,7 @@ mongoose.connect(db)
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(express.static(path.join(__dirname, 'styles')));
+app.use(express.static(path.join(__dirname, 'images')));
 app.use('/', nav);
 app.use('/api/rpg', rpg);
 
