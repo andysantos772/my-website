@@ -1,0 +1,50 @@
+/* Global css styles that CAN be overriden in other files */
+:root {
+    /* Color scheme */
+    --darkest-color: #000000;
+    --dark-color: #2F4550;
+    --mid-color: #586F7C;
+    --light-color: #B8DBD9;
+    --lightest-color: #F4F4F9;
+}
+
+/* Navigation bar styles */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--dark-color);
+}
+
+nav a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--lightest-color);
+    font-size: 20px;
+}
+
+nav a:hover {
+    background-color: var(--light-color);
+    color: var(--darkest-color);
+}
+
+nav > * {
+    width: 25%;
+    position: relative;
+}
+
+.project-dropdown.show {
+    display: block;
+}
+
+.project-dropdown {
+    display: none;
+    width: 100%;
+    position: absolute;
+    background-color: var(--dark-color);
+}
+
+.projects-block a {
+    display: block;
+}
