@@ -12,10 +12,10 @@
     color: black;
 }
 
-form {
+.forms > form {
     display: none;
 }
 
-form.show {
+.forms > form.show {
     display: block;
 }

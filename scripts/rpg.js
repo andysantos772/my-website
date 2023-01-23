@@ -2,7 +2,7 @@
 function toggleForm() {
     const chosenForm = document.querySelector(`.${this.id}`);
     if (!chosenForm.classList.contains('show')) {
-        document.querySelector('.show').classList.remove('show');
+        document.querySelector('.forms .show').classList.remove('show');
         chosenForm.classList.add('show');
     }
 }

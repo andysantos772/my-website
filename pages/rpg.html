@@ -19,28 +19,101 @@
         <button type="button" id="spells">SPELLCASTING</button>
     </div>
 
-    <div id="char-creator">
-        <div class="static-info">
-            <p>lorem ipsum lorem ipsum</p>
-        </div>
+    <div class="creator">
+        <form class="info">
+            <input type="file" accept="image/png, image/jpeg"> 
+
+            <label for="charName">Character Name</label>
+            <input id="charName" type="text" name="name" required>
+
+            <label for="charClass">Class</label>
+            <input id="charClass" type="text" name="class">
+
+            <label for="charRace">Race</label>
+            <input id="charRace" type="text" name="race">
+
+
+        </form>
 
         <div class="forms">
-            <form action="/api/rpg/dnd" method="post" class="stats show">
-                <label for="stat">STAT BLOCKS</label>
-                <input type="text" id="stat">
+            <form class="stats show">
+                <!-- The Checkboxes are for saving throws -->
+                <label for="strength">Strength</label>
+                <input id="strength" type="text" name="strength">
+                <input type="checkbox" id="str-save" name="str-save">
+
+                <label for="dexterity">Dexterity</label>
+                <input id="dexterity" type="text" name="dexterity">
+                <input type="checkbox" id="dex-save" name="dex-save">
+
+                <label for="constitution">Constitution</label>
+                <input id="constitution" type="text" name="constitution">
+                <input type="checkbox" id="con-save" name="con-save">
+
+                <label for="intelligence">Intelligence</label>
+                <input id="intelligence" type="text" name="intelligence">
+                <input type="checkbox" id="int-save" name="int-save">
+
+                <label for="wisdom">Wisdom</label>
+                <input id="wisdom" type="text" name="wisdom">
+                <input type="checkbox" id="wis-save" name="wis-save">
+
+                <label for="charisma">Charisma</label>
+                <input id="charisma" type="text" name="charisma">
+                <input type="checkbox" id="cha-save" name="cha-save">
+
+            </form>
+            
+            <form class="bio">
+                <label for="age">Age</label>
+                <input id="age" type="text" name="age">
+
+                <label for="height">Height</label>
+                <input id="height" type="text" name="height">
+
+                <label for="weight">Weight</label>
+                <input id="weight" type="text" name="weight">
+
+                <label for="eyes">Eyes</label>
+                <input id="eyes" type="text" name="eyes">
+
+                <label for="skin">Skin</label>
+                <input id="skin" type="text" name="skin">
+
+                <label for="hair">Hair</label>
+                <input id="hair" type="text" name="hair">
+
+                <label for="allies">Allies and Organizations</label>
+                <input id="allies" type="text" name="allies">
+
+                <label for="backstory">Backstory</label>
+                <input id="backstory" type="text" name="backstory">
+
+                <label for="traits">Features and Traits</label>
+                <input id="traits" type="text" name="traits">
             </form>
 
-            <form action="/api/rpg/dnd" method="post" class="bio">
-                <label for="bio">BIOGRAPHY</label>
-                <input type="text" id="bio">
-            </form>
+            <form class="spells">
+                <label for="spell-class">Spellcasting Class</label>
+                <input id="spell-class" type="text" name="spell-class">
 
-            <form action="/api/rpg/dnd" method="post" class="spells">
-                <label for="spell">SPELLCASTING</label>
-                <input type="text" id="spell">
+                <label for="spell-ability">Spellcasting Ability</label>
+                <select id="spell-ability" name="spell-ability">
+                    <option value="str">Strength</option>
+                    <option value="dex">Dexterity</option>
+                    <option value="con">Constitution</option>
+                    <option value="int">Intelligence</option>
+                    <option value="wis">Wisdom</option>
+                    <option value="cha">Charisma</option>
+                </select>
+
+                <label for="spell-save">Spell Save DC</label>
+                <input id="spell-save" type="text" name="spell-save">
+
+                <label for="spell-bonus">Spell Attack Bonus</label>
+                <input id="spell-bonus" type="text" name="spell-bonus">
             </form>
         </div>
-    </div>
     </div>
 </body>
 </html>
