@@ -21,9 +21,10 @@
 
     <div class="creator">
         <form class="info">
-            <input type="file" accept="image/png, image/jpeg"> 
+            <img id="portrait" src="" alt="Character Portrait">
+            <input type="file" accept="image/png, image/jpeg" onchange="showPortrait()">
 
-            <label for="charName">Character Name</label>
+            <label for="charName">Name</label>
             <input id="charName" type="text" name="name" required>
 
             <label for="charClass">Class</label>
@@ -31,7 +32,6 @@
 
             <label for="charRace">Race</label>
             <input id="charRace" type="text" name="race">
-
 
         </form>
 

@@ -8,6 +8,10 @@
     --lightest-color: #F4F4F9;
 }
 
+body {
+    margin: 0px;
+}
+
 /* Navigation bar styles */
 nav {
     display: flex;

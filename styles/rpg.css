@@ -1,15 +1,29 @@
+/* Color scheme
+:root {
+    --darkest-color: #344E41;
+    --dark-color: #3A5A40;
+    --medium-color: #588157;
+    --light-color: #A3B18A;
+    --lightest-color: #DAD7CD;
+}*/
+
 #page {
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
+    background-color: gray;
+    width: 90%;
+    margin: 5vh auto;
 }
 
-#char-creator {
+/* Bar with the form-switching buttons */
+.form-selectors {
     display: flex;
+    justify-content: space-around;
 }
 
 .form-selectors button {
     color: black;
+    width: 33%;
 }
 
 .forms > form {
@@ -18,4 +32,31 @@
 
 .forms > form.show {
     display: block;
+}
+
+.creator {
+    display: flex;
+}
+
+.forms {
+    flex: 2;
+}
+
+/* Style the left-hand side character info block */
+.info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
+}
+
+#portrait {
+    object-fit: cover;
+    width: 250px;
+    height: 375px;
+    background-color: black;
+}
+
+.info input[type='text'] {
+    width: 85%;
 }
