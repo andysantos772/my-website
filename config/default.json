@@ -1,3 +1,6 @@
 {
-    "db": "127.0.0.1"
+    "db": "127.0.0.1",
+    "cloudName": "",
+    "cloudinaryApiKey": "",
+    "cloudinaryApiSecret": ""
 }

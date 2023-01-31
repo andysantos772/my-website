@@ -1,3 +1,6 @@
 {
-    "db": "website_db"
+    "db": "website_db",
+    "cloudName": "cloudName",
+    "cloudinaryApiKey": "cloudinaryApiKey",
+    "cloudinaryApiSecret": "cloudinaryApiSecret"
 }

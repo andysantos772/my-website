@@ -22,12 +22,21 @@ function showPortrait() {
     };
 
     if (file) reader.readAsDataURL(file);
-    else preview.src = "";
+    else portrait.src = "";
 }
 
 // Submit the forms to the database
 function submitForms() {
-    //
+    fetch('/api/rpg/dnd', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ "id": 78912 })
+    })
+    .then(response => response.json())
+    .then(response => console.log(JSON.stringify(response)));
 }
 
 function submitInfo() {
@@ -48,3 +57,24 @@ function submitSpells() {
 
 
 // Add spells to the spell list
+
+const config = require('config');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+    cloud_name: config.get('cloudName'),
+    api_key: config.get('cloudinaryApiKey'),
+    api_secret: config.get('cloudinaryApiSecret')
+});
+
+function testUpload() {
+    const file = document.querySelector('input[type=file]').files[0];
+    console.log(file);
+    cloudinary.uploader.upload(file, {public_id: "zeus"});
+    const url = cloudinary.url("zeus", {
+        width: 100,
+        height: 150,
+        Crop: 'fill'
+    });
+    console.log(url);
+}
