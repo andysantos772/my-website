@@ -1,3 +1,6 @@
+const config = require('config');
+const cloudinary = require('cloudinary').v2;
+
 // Use buttons to toggle between the 3 forms for dnd characters
 function toggleForm() {
     const chosenForm = document.querySelector(`.${this.id}`);
@@ -58,8 +61,7 @@ function submitSpells() {
 
 // Add spells to the spell list
 
-const config = require('config');
-const cloudinary = require('cloudinary').v2;
+
 
 cloudinary.config({
     cloud_name: config.get('cloudName'),
