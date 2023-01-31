@@ -31,16 +31,16 @@ router.post('/dnd', async (req, res) => {
   res.send(char);
 });
 
-router.get('/img', async (req, res) => {
-  const file = document.querySelector('input[type=file]').files[0];
-    console.log(file);
-    cloudinary.uploader.upload(file, {public_id: "zeus"});
-    const url = cloudinary.url("zeus", {
-        width: 100,
-        height: 150,
-        Crop: 'fill'
-    });
-    console.log(url);
+router.post('/img', async (req, res) => {
+  const file = req.body.file;
+  console.log(file);
+  cloudinary.uploader.upload(file, {public_id: "zeus"});
+  const url = cloudinary.url("zeus", {
+      width: 100,
+      height: 150,
+      Crop: 'fill'
+  });
+  console.log(url);
 });
 
 module.exports = router;

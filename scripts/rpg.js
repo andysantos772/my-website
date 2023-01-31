@@ -60,12 +60,15 @@ function submitSpells() {
 
 // Add spells to the spell list
 
-
 function testUpload() {
     fetch('/api/rpg/img', {
-        headers: {
-            'Accept': 'application/json'
-        }})
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ "file": document.querySelector('input[type=file]').files[0]})
+    })
     .then(response => response.text())
     .then(text => console.log(text))
     showPortrait();
