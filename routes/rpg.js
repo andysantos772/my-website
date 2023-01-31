@@ -2,6 +2,15 @@ const { DndCharacter, DndValidate } = require('../models/dnd');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const config = require('config');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: config.get('cloudName'),
+  api_key: config.get('cloudinaryApiKey'),
+  api_secret: config.get('cloudinaryApiSecret')
+});
+
 
 router.get('/dnd', async (req, res) => {
   const chars = await DndCharacter.find();
@@ -22,5 +31,16 @@ router.post('/dnd', async (req, res) => {
   res.send(char);
 });
 
+router.get('/img', async (req, res) => {
+  const file = document.querySelector('input[type=file]').files[0];
+    console.log(file);
+    cloudinary.uploader.upload(file, {public_id: "zeus"});
+    const url = cloudinary.url("zeus", {
+        width: 100,
+        height: 150,
+        Crop: 'fill'
+    });
+    console.log(url);
+});
 
 module.exports = router;

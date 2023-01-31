@@ -1,5 +1,4 @@
-const config = require('config');
-const cloudinary = require('cloudinary').v2;
+
 
 // Use buttons to toggle between the 3 forms for dnd characters
 function toggleForm() {
@@ -62,21 +61,12 @@ function submitSpells() {
 // Add spells to the spell list
 
 
-
-cloudinary.config({
-    cloud_name: config.get('cloudName'),
-    api_key: config.get('cloudinaryApiKey'),
-    api_secret: config.get('cloudinaryApiSecret')
-});
-
 function testUpload() {
-    const file = document.querySelector('input[type=file]').files[0];
-    console.log(file);
-    cloudinary.uploader.upload(file, {public_id: "zeus"});
-    const url = cloudinary.url("zeus", {
-        width: 100,
-        height: 150,
-        Crop: 'fill'
-    });
-    console.log(url);
+    fetch('/api/rpg/img', {
+        headers: {
+            'Accept': 'application/json'
+        }})
+    .then(response => response.text())
+    .then(text => console.log(text))
+    showPortrait();
 }
